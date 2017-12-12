@@ -229,40 +229,5 @@ class TestMySort(unittest.TestCase):
         self.assertEqual(
             self.my_sort.selection_sort(my_tab), sorted_array)
 
-
-
-    # get_minus_of_two_elem
-
-    def test_get_minus_of_two_elem_1_lower__return_first(self):
-        elem_1 = 2
-        elem_2 = 3
-        self.assertEqual(
-            self.my_sort.get_minus_of_two_elem(elem_1, elem_2), 2)
-
-    def test_get_minus_of_two_elem_1_lower__return_first(self):
-        elem_1 = 2
-        elem_2 = -1
-        self.assertEqual(
-            self.my_sort.get_minus_of_two_elem(elem_1, elem_2), 2)
-
-    def test_get_minus_of_two_elem_1_lower__return_second(self):
-        elem_1 = 3
-        elem_2 = 2
-        self.assertEqual(
-            self.my_sort.get_minus_of_two_elem(elem_1, elem_2), 2)
-
-    def test_get_minus_of_two_elem_1_lower__return_second(self):
-        elem_1 = -1
-        elem_2 = 2
-        self.assertEqual(
-            self.my_sort.get_minus_of_two_elem(elem_1, elem_2), 2)
-
-    def test_get_minus_of_two_elem_1_lower__return_minus_one(self):
-        elem_1 = -1
-        elem_2 = -1
-        self.assertEqual(
-            self.my_sort.get_minus_of_two_elem(elem_1, elem_2), -1)
-
-
 if __name__ == '__main__':
     unittest.main()

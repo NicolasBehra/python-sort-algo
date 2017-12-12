@@ -62,10 +62,3 @@ class MySort:
         t[pos_val_1] = t[pos_val_2]
         t[pos_val_2] = val_1
         return t
-
-    def get_minus_of_two_elem(self, elem_1: int, elem_2: int) -> int:
-        if (elem_2 == -1):
-            return elem_1
-        if (elem_1 == -1):
-            return elem_2
-        return elem_1 if (elem_1 <= elem_2) else elem_2
