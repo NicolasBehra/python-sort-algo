@@ -4,7 +4,7 @@ A simple project made to understand basis of python and in the same time just pl
 ## Testing
 
 ### Run unit Tests
-On the root project
+On the root project, under src/
 ```sh
-> python3.6 -m unittest src/tri_spec.py
+> python3.6 -m unittest tri_spec.py
 ```

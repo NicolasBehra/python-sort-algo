@@ -28,11 +28,6 @@ class MySort:
                     return 0
         return -1
 
-        # for i in range(0, len(sorted_t)):
-        #     if (sorted_t[i] == elem):
-        #         return i
-        # return -1
-
     def split_array(self, t: IntArray) -> (IntArray, IntArray):
         if (len(t) > 0):
             if (len(t) > 1):
@@ -42,14 +37,35 @@ class MySort:
                 return t, IntArray
         return IntArray, IntArray
 
+    def get_index_of_minimum(self, t: IntArray) -> int:
+        if (len(t) > 0):
+            if (len(t) > 1):
+                (minus, index) = (t[0], 0)
+                for i in range(1, len(t)):
+                    if (t[i] < minus):
+                        (minus, index) = (t[i], i)
+                return index
+            return 0
+        return -1
 
+    def selection_sort(self, t: IntArray) -> IntArray:
+        if (len(t) > 0):
+            if (len(t) > 1):
+                for i in range(0, len(t)-1):
+                    index_of_minimum = self.get_index_of_minimum(t[i:]) + i
+                    t = self.invert_two_values(t, i, index_of_minimum)
+            return t
+        return IntArray
 
-        # if (len(sorted_t) > 0):
-        #     if (sorted_t[0] == elem):
-        #         return 0
-        #     elif (len(sorted_t) > 1):
-        #         if (sorted_t[1] == elem):
-        #             return 1
-        #         elif (len(sorted_t) > 2):
-        #             if (sorted_t[2] == elem):
-        #                 return 2
+    def invert_two_values(self, t: IntArray, pos_val_1: int, pos_val_2: int) -> IntArray:
+        val_1 = t[pos_val_1]
+        t[pos_val_1] = t[pos_val_2]
+        t[pos_val_2] = val_1
+        return t
+
+    def get_minus_of_two_elem(self, elem_1: int, elem_2: int) -> int:
+        if (elem_2 == -1):
+            return elem_1
+        if (elem_1 == -1):
+            return elem_2
+        return elem_1 if (elem_1 <= elem_2) else elem_2
