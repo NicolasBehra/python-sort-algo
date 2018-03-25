@@ -3,8 +3,8 @@
 import unittest
 import array
 
-from tri import MySort as MySortClass
-from tri import IntArray
+from sort.mysort import MySort as MySortClass
+from sort.mysort import IntArray
 
 class TestMySort(unittest.TestCase):
 
